@@ -1,0 +1,132 @@
+.home__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-image: url(../../../public/img/homeBg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+
+    .bg__bl {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .7);
+        z-index: 1;
+    }
+    
+    .baner {
+        position: absolute;
+        top: 30px;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    h3 {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 5px;
+        color: #fff;
+        z-index: 1000;
+    }
+
+    .descr {
+        margin-top: 30px;
+        z-index: 1000;
+        p {
+            width: 16ch;
+            font-size: 2rem;
+            color: #fff;
+            opacity: 0.7;
+            letter-spacing: 3px;
+            border-right: 3px solid orange;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: flashing-border 0.75s step-end infinite,typing 5s steps(14) infinite;
+
+            @media (max-width: 320px) {
+                font-size: 1.4rem;
+                animation: flashing-border 0.75s step-end infinite,typing 4s steps(14) infinite;
+            }
+        }
+    }
+
+    .links {
+        margin-top: 50px;
+        z-index: 1000;
+
+        @media (max-width: 325px) {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .btn {
+                margin-bottom: 25px;
+                width: 160px;
+            }
+
+            .btn__transp {
+                margin: 0 auto !important;
+            }
+            
+        }
+
+        .btn,
+        .btn__transp {
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 40px;
+            background: orange;
+            cursor: pointer;
+
+        }
+
+        .btn {
+            color: #fff;
+            border: none;
+        }
+
+        .btn__transp {
+            background: transparent;
+            color: orange;
+            border: 2px solid orange;
+            margin-left: 50px;
+            transition: 0.5s all;
+
+            &:hover {
+                background: transparent;
+                color: #fff;
+                background: orange;
+            }
+        }
+    }
+}
+
+@keyframes flashing-border {
+    0% {
+        border-color: orange;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: orange;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}

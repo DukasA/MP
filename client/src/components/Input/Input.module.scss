@@ -1,0 +1,15 @@
+.input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #121212;
+    outline: none;
+    color: white;
+
+    &:active {
+        outline: 1px solid blue;
+    }
+}

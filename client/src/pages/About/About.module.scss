@@ -1,0 +1,205 @@
+.aboutBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: #000;
+    background-image: url(../../../public/img/about.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 50px;
+
+    @media (max-width: 850px) {
+        padding: 70px 10px 20px 10px;
+    }
+
+    @media (max-width: 320px) {
+        padding: 70px 10px 20px 10px;
+    }
+
+    .bg__bl {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .9);
+        z-index: 1;
+    }
+
+    .content {
+        z-index: 1000;
+        text-align: center;
+
+        .title {
+            font-size: 45px;
+            font-weight: 700;
+            color: orange;
+
+            @media (max-width: 320px) {
+                font-size: 30px;
+            }
+
+            span {
+                color: white;
+                font-size: 40px;
+
+                @media (max-width: 450px) {
+                    font-size: 35px;
+                }
+
+                @media (max-width: 320px) {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .legend {
+            margin: 0 auto;
+            width: 70%;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            line-height: 30px;
+            font-size: 20px;
+
+            @media (max-width: 895px) {
+                font-size: 18px;
+                width: 100%;
+            }
+
+            @media (max-width: 450px) {
+                font-size: 18px;
+            }
+
+            @media (max-width: 320px) {
+                font-size: 12px;
+            }
+
+            span {
+                color: orange;
+            }
+        }
+
+        .skillsBlock {
+            margin-top: 50px;
+            color: white;
+
+            &__title {
+                color: orange;
+                font-size: 30px;
+
+                @media (max-width: 320px) {
+                    font-size: 25px;
+                }
+            }
+
+            .skillsList {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: center;
+                list-style: none;
+
+
+                @media (max-width: 895px) {
+                    
+                    width: 100%;
+                }
+
+                .skillItem {
+                    margin: 0 20px;
+
+                    @media (max-width: 670px) {
+                        margin: 0 10px;
+                    }
+
+                    &:nth-child(1) {
+                        color: #61DBFB;
+
+                        .icon {
+                            color: #61DBFB;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        color: #eb4034;
+
+                        .icon {
+                            color: #eb4034;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        color: #fcba03;
+
+                        .icon {
+                            color: #fcba03;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        color: #F848B5;
+
+                        .icon {
+                            color: #F848B5;
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        color: #F0DB4F;
+
+                        .icon {
+                            color: #F0DB4F;
+                        }
+
+                        .level:nth-child(5) {
+                            font-size: 28px;
+                            color: rgba($color: #99CC00, $alpha: 0.7);
+                        }
+                    }
+
+                    .icon {
+                        width: 120px;
+                        height: 90px;
+
+                        @media (max-width: 670px) {
+                            width: 100px;
+                            height: 60px;
+                        }
+
+                        @media (max-width: 320px) {
+                            width: 85px;
+                            height: 45px;
+                        }
+                    }
+
+                    &__name {
+                        font-size: 25px;
+
+                        @media (max-width: 320px) {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .level {
+                        font-size: 28px;
+                        color: #99CC00;
+
+                        @media (max-width: 320px) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

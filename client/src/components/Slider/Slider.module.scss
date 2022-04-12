@@ -1,0 +1,275 @@
+.slider {
+    display: flex;
+    width: 750px;
+    height: 450px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1000;
+
+    @media (max-width: 800px) {
+        overflow: visible;
+    }
+
+    .message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: orange;
+    }
+
+    @media (max-width: 1075px) {
+        width: 95%;
+        height: 370px;
+    }
+
+    @media (max-width: 800px) {
+        width: 95%;
+        height: 300px;
+    }
+
+    @media (max-width: 420px) {
+        width: 95%;
+        height: 270px;
+    }
+
+
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        border-radius: 12px;
+
+        &__active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: 0.5s all;
+            animation-name: slide;
+            animation-duration: 2s;
+
+            .bg__bl {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .7);
+                z-index: 1;
+                border-radius: 12px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+            }
+        }
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            font-weight: 700;
+
+            .title {
+                font-size: 30px;
+                color: orange;
+
+                @media (max-width: 520px) {
+                    font-size: 24px;
+                }
+
+                @media (max-width: 300px) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .descr {
+                margin: 50px 0;
+                width: 400px;
+                color: white;
+                text-align: center;
+
+                @media (max-width: 520px) {
+                    margin: 20px 0;
+                    font-size: 14px;
+                }
+
+                @media (max-width: 300px) {
+                    display: none;
+                }
+            }
+
+            .linkTo {
+
+                &__button {
+                    padding: 15px 15px;
+                    font-size: 18px;
+                    border-radius: 40px;
+                    background: rgba($color: orange, $alpha: 0.3);
+                    border: 2px solid orange;
+                    cursor: pointer;
+                    color: white;
+                    transition: 0.5s all;
+
+                    @media (max-width: 520px) {
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+
+                    @media (max-width: 300px) {
+                        padding: 10px;
+                        font-size: 11px;
+                    }
+
+                    &:hover {
+                        background: rgba($color: orange, $alpha: 1);
+                        
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    &__buttonPrev,
+    &__buttonNext {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba($color: white, $alpha: 0.6);
+        color: black;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.5s all;
+        font-size: 21px;
+        font-weight: 700;
+        z-index: 1100;
+
+        @media (max-width: 520px) {
+            width: 40px;
+            height: 40px;
+
+            top: 110%;
+        }
+
+        @media (max-width: 320px) {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover {
+            background: rgba($color: white, $alpha: 1);
+        }
+    }
+
+    &__buttonPrev {
+        left: 0;
+    }
+
+    &__buttonNext {
+        right: 0;
+        animation: pulseBtn 2.5s infinite ease-in-out;
+    }
+
+    .container__dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+
+        @media (max-width: 800px) {
+            bottom: -40px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            background: rgba($color: white, $alpha: 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s all;
+            margin: 0 10px;
+
+            &:hover {
+                background: rgba($color: white, $alpha: 1);
+            }
+
+            &__active {
+                position: relative;
+                background: white;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                margin: 0 10px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: gray;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+
+                }
+            }
+
+        }
+        
+    }
+}
+
+@keyframes slide {
+    0%{
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseBtn {
+    0%{
+        background: rgba($color: white, $alpha: 0.6);
+    }
+    50% {
+        background: rgba($color: orange, $alpha: 0.9);
+        color: white;
+    }
+    100%{
+        background: rgba($color: white, $alpha: 0.6);
+    }
+}
